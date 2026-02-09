@@ -1,5 +1,5 @@
 /**
- * GodotServer: MCP server lifecycle, tool registration, and operation execution.
+ * MechTurkServer: MCP server lifecycle, tool registration, and operation execution.
  */
 
 import { fileURLToPath } from 'url';

@@ -12,7 +12,7 @@ export function registerScreenshotTools(ctx: ToolContext): ToolRegistration {
   const tools = [
     {
       name: 'capture_screenshot',
-      description: 'Capture a screenshot from the running Godot editor or game viewport. Requires the Godot editor to be running with the MCP plugin.',
+      description: 'Capture a screenshot from the running Mechanical Turk editor or game viewport. Requires the Mechanical Turk editor to be running with the MCP plugin.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -50,7 +50,7 @@ export function registerScreenshotTools(ctx: ToolContext): ToolRegistration {
         });
 
         if (!result || !result.image_base64) {
-          return createErrorResponse('No screenshot data received from Godot');
+          return createErrorResponse('No screenshot data received from the engine');
         }
 
         // If outputPath is specified, save to file
@@ -64,7 +64,7 @@ export function registerScreenshotTools(ctx: ToolContext): ToolRegistration {
         return createImageResponse(result.image_base64, 'image/png', `Screenshot captured (${result.width}x${result.height})`);
       } catch (error: any) {
         return createErrorResponse(`Failed to capture screenshot: ${error?.message || 'Unknown error'}`, [
-          'Ensure the Godot editor is running with the MCP plugin enabled',
+          'Ensure the Mechanical Turk editor is running with the MCP plugin enabled',
           'Use install_plugin to install the plugin if not already installed',
           'For "game" source, ensure a project is running in the editor',
         ]);

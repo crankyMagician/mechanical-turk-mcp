@@ -13,11 +13,11 @@ export function registerSceneTools(ctx: ToolContext): ToolRegistration {
   const tools = [
     {
       name: 'create_scene',
-      description: 'Create a new Godot scene file',
+      description: 'Create a new Mechanical Turk scene file',
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
           scenePath: { type: 'string', description: 'Path where the scene file will be saved (relative to project)' },
           rootNodeType: { type: 'string', description: 'Type of the root node (e.g., Node2D, Node3D)' },
         },
@@ -30,7 +30,7 @@ export function registerSceneTools(ctx: ToolContext): ToolRegistration {
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
           scenePath: { type: 'string', description: 'Path to the scene file (relative to project)' },
           parentNodePath: { type: 'string', description: 'Path to the parent node (e.g., "root" or "root/Player")' },
           nodeType: { type: 'string', description: 'Type of node to add (e.g., Sprite2D, CollisionShape2D)' },
@@ -46,7 +46,7 @@ export function registerSceneTools(ctx: ToolContext): ToolRegistration {
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
           scenePath: { type: 'string', description: 'Path to the scene file (relative to project)' },
           nodePath: { type: 'string', description: 'Path to the Sprite2D node (e.g., "root/Player/Sprite2D")' },
           texturePath: { type: 'string', description: 'Path to the texture file (relative to project)' },
@@ -60,7 +60,7 @@ export function registerSceneTools(ctx: ToolContext): ToolRegistration {
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
           scenePath: { type: 'string', description: 'Path to the scene file (relative to project)' },
           newPath: { type: 'string', description: 'Optional: New path to save the scene to (for creating variants)' },
         },
@@ -80,7 +80,7 @@ export function registerSceneTools(ctx: ToolContext): ToolRegistration {
       }
       try {
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`);
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`);
         }
         const params = { scenePath: args.scenePath, rootNodeType: args.rootNodeType || 'Node2D' };
         const { stdout, stderr } = await ctx.executeOperation('create_scene', params, args.projectPath);
@@ -103,7 +103,7 @@ export function registerSceneTools(ctx: ToolContext): ToolRegistration {
       }
       try {
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`);
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`);
         }
         if (!existsSync(join(args.projectPath, args.scenePath))) {
           return createErrorResponse(`Scene file does not exist: ${args.scenePath}`);
@@ -131,7 +131,7 @@ export function registerSceneTools(ctx: ToolContext): ToolRegistration {
       }
       try {
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`);
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`);
         }
         if (!existsSync(join(args.projectPath, args.scenePath))) {
           return createErrorResponse(`Scene file does not exist: ${args.scenePath}`);
@@ -163,7 +163,7 @@ export function registerSceneTools(ctx: ToolContext): ToolRegistration {
       }
       try {
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`);
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`);
         }
         if (!existsSync(join(args.projectPath, args.scenePath))) {
           return createErrorResponse(`Scene file does not exist: ${args.scenePath}`);

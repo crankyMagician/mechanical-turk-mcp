@@ -63,16 +63,16 @@ export function registerProjectTools(ctx: ToolContext): ToolRegistration {
   const tools = [
     {
       name: 'get_godot_version',
-      description: 'Get the installed Godot version',
+      description: 'Get the installed Mechanical Turk engine version',
       inputSchema: { type: 'object', properties: {}, required: [] },
     },
     {
       name: 'list_projects',
-      description: 'List Godot projects in a directory',
+      description: 'List Mechanical Turk projects in a directory',
       inputSchema: {
         type: 'object',
         properties: {
-          directory: { type: 'string', description: 'Directory to search for Godot projects' },
+          directory: { type: 'string', description: 'Directory to search for Mechanical Turk projects' },
           recursive: { type: 'boolean', description: 'Whether to search recursively (default: false)' },
         },
         required: ['directory'],
@@ -80,11 +80,11 @@ export function registerProjectTools(ctx: ToolContext): ToolRegistration {
     },
     {
       name: 'get_project_info',
-      description: 'Retrieve metadata about a Godot project',
+      description: 'Retrieve metadata about a Mechanical Turk project',
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
         },
         required: ['projectPath'],
       },
@@ -135,7 +135,7 @@ export function registerProjectTools(ctx: ToolContext): ToolRegistration {
         const godotPath = await ctx.ensureGodotPath();
         const projectFile = join(args.projectPath, 'project.godot');
         if (!existsSync(projectFile)) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`, [
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`, [
             'Ensure the path points to a directory containing a project.godot file',
           ]);
         }

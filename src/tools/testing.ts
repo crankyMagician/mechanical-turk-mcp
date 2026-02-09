@@ -35,11 +35,11 @@ export function registerTestingTools(ctx: ToolContext): ToolRegistration {
   const tools = [
     {
       name: 'list_tests',
-      description: 'List GUT test files in a Godot project. Scans for test_*.gd files.',
+      description: 'List GUT test files in a Mechanical Turk project. Scans for test_*.gd files.',
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
           testDir: { type: 'string', description: 'Subdirectory to search (relative to project, default: "test")' },
         },
         required: ['projectPath'],
@@ -47,11 +47,11 @@ export function registerTestingTools(ctx: ToolContext): ToolRegistration {
     },
     {
       name: 'run_tests',
-      description: 'Run GUT tests headlessly in a Godot project. Requires GUT addon installed.',
+      description: 'Run GUT tests headlessly in a Mechanical Turk project. Requires GUT addon installed.',
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
           testScript: { type: 'string', description: 'Optional: Specific test script to run (relative to project)' },
           testName: { type: 'string', description: 'Optional: Specific test function name to run' },
           testDir: { type: 'string', description: 'Optional: Test directory (relative to project)' },
@@ -74,7 +74,7 @@ export function registerTestingTools(ctx: ToolContext): ToolRegistration {
       }
       try {
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`);
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`);
         }
 
         // Determine search directory
@@ -111,7 +111,7 @@ export function registerTestingTools(ctx: ToolContext): ToolRegistration {
         const godotPath = await ctx.ensureGodotPath();
 
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`);
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`);
         }
 
         // Check GUT is installed

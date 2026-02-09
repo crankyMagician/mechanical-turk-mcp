@@ -11,7 +11,7 @@ export function registerInputTools(ctx: ToolContext): ToolRegistration {
   const tools = [
     {
       name: 'send_input_event',
-      description: 'Send a keyboard or mouse input event to the running Godot game. Requires the Godot editor with MCP plugin.',
+      description: 'Send a keyboard or mouse input event to the running Mechanical Turk game. Requires the Mechanical Turk editor with MCP plugin.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -53,7 +53,7 @@ export function registerInputTools(ctx: ToolContext): ToolRegistration {
     },
     {
       name: 'send_action',
-      description: 'Trigger a Godot Input Map action (press or release). Requires the Godot editor with MCP plugin.',
+      description: 'Trigger a Mechanical Turk Input Map action (press or release). Requires the Mechanical Turk editor with MCP plugin.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -94,7 +94,7 @@ export function registerInputTools(ctx: ToolContext): ToolRegistration {
         return createTextResponse(`Input event sent: ${args.eventType}${args.key ? ` (${args.key})` : ''} - ${result?.status || 'ok'}`);
       } catch (error: any) {
         return createErrorResponse(`Failed to send input event: ${error?.message || 'Unknown error'}`, [
-          'Ensure the Godot editor is running with the MCP plugin enabled',
+          'Ensure the Mechanical Turk editor is running with the MCP plugin enabled',
           'For game input, ensure a project is running in the editor',
         ]);
       }
@@ -114,7 +114,7 @@ export function registerInputTools(ctx: ToolContext): ToolRegistration {
         return createTextResponse(`Action '${args.action}' ${args.pressed !== false ? 'pressed' : 'released'} - ${result?.status || 'ok'}`);
       } catch (error: any) {
         return createErrorResponse(`Failed to send action: ${error?.message || 'Unknown error'}`, [
-          'Ensure the Godot editor is running with the MCP plugin enabled',
+          'Ensure the Mechanical Turk editor is running with the MCP plugin enabled',
           `Verify that action "${args.action}" exists in the project's Input Map`,
         ]);
       }

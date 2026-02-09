@@ -1,5 +1,5 @@
 /**
- * WebSocket client connecting to the Godot editor plugin bridge.
+ * WebSocket client connecting to the Mechanical Turk editor plugin bridge.
  */
 
 import WebSocket from 'ws';
@@ -42,18 +42,18 @@ export class BridgeClient {
 
     this.connectPromise = new Promise<void>((resolve, reject) => {
       const url = `ws://${this.host}:${this.port}`;
-      logDebug(`Connecting to Godot bridge at ${url}`);
+      logDebug(`Connecting to Mechanical Turk bridge at ${url}`);
 
       const ws = new WebSocket(url);
       const timeout = setTimeout(() => {
         ws.close();
-        reject(new Error(`Connection to Godot bridge timed out (${url}). Is the Godot editor running with the MCP plugin enabled?`));
+        reject(new Error(`Connection to Mechanical Turk bridge timed out (${url}). Is the Godot editor running with the MCP plugin enabled?`));
       }, 5000);
 
       ws.on('open', () => {
         clearTimeout(timeout);
         this.ws = ws;
-        logDebug('Connected to Godot bridge');
+        logDebug('Connected to Mechanical Turk bridge');
         resolve();
       });
 
@@ -76,7 +76,7 @@ export class BridgeClient {
       });
 
       ws.on('close', () => {
-        logDebug('Disconnected from Godot bridge');
+        logDebug('Disconnected from Mechanical Turk bridge');
         this.ws = null;
         // Reject any pending requests
         for (const [id, pending] of this.pendingRequests) {
@@ -91,7 +91,7 @@ export class BridgeClient {
         logDebug(`Bridge connection error: ${err.message}`);
         this.ws = null;
         reject(new Error(
-          `Cannot connect to Godot bridge at ws://${this.host}:${this.port}. ` +
+          `Cannot connect to Mechanical Turk bridge at ws://${this.host}:${this.port}. ` +
           'Ensure the Godot editor is running with the Mechanical Turk MCP plugin enabled. ' +
           'Use the install_plugin tool to install the plugin, then enable it in Project > Project Settings > Plugins.'
         ));

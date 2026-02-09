@@ -2,7 +2,7 @@
 /**
  * Mechanical Turk MCP Server
  *
- * Enhanced Godot MCP server with WebSocket bridge support for
+ * Enhanced Mechanical Turk MCP server with WebSocket bridge support for
  * live editor integration (screenshots, input simulation, scene tree inspection).
  */
 

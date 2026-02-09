@@ -17,7 +17,7 @@ export function registerMeshTools(ctx: ToolContext): ToolRegistration {
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
           scenePath: { type: 'string', description: 'Path to the scene file (.tscn) to export' },
           outputPath: { type: 'string', description: 'Path where the mesh library (.res) will be saved' },
           meshItemNames: { type: 'array', items: { type: 'string' }, description: 'Optional: Names of specific mesh items to include' },
@@ -38,7 +38,7 @@ export function registerMeshTools(ctx: ToolContext): ToolRegistration {
       }
       try {
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`);
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`);
         }
         if (!existsSync(join(args.projectPath, args.scenePath))) {
           return createErrorResponse(`Scene file does not exist: ${args.scenePath}`);

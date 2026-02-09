@@ -19,13 +19,13 @@ export function registerPluginTools(_ctx: ToolContext): ToolRegistration {
   const tools = [
     {
       name: 'install_plugin',
-      description: 'Install the Mechanical Turk MCP bridge plugin into a Godot project. After installing, enable it in Godot: Project > Project Settings > Plugins.',
+      description: 'Install the Mechanical Turk MCP bridge plugin into a project. After installing, enable it in Project > Project Settings > Plugins.',
       inputSchema: {
         type: 'object',
         properties: {
           projectPath: {
             type: 'string',
-            description: 'Path to the Godot project directory',
+            description: 'Path to the Mechanical Turk project directory',
           },
         },
         required: ['projectPath'],
@@ -45,7 +45,7 @@ export function registerPluginTools(_ctx: ToolContext): ToolRegistration {
 
       try {
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`, [
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`, [
             'Ensure the path points to a directory containing a project.godot file',
           ]);
         }

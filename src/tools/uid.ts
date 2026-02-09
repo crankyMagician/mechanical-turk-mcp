@@ -27,11 +27,11 @@ export function registerUidTools(ctx: ToolContext): ToolRegistration {
   const tools = [
     {
       name: 'get_uid',
-      description: 'Get the UID for a specific file in a Godot project (for Godot 4.4+)',
+      description: 'Get the UID for a specific file in a Mechanical Turk project (for Godot 4.4+)',
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
           filePath: { type: 'string', description: 'Path to the file (relative to project) for which to get the UID' },
         },
         required: ['projectPath', 'filePath'],
@@ -39,11 +39,11 @@ export function registerUidTools(ctx: ToolContext): ToolRegistration {
     },
     {
       name: 'update_project_uids',
-      description: 'Update UID references in a Godot project by resaving resources (for Godot 4.4+)',
+      description: 'Update UID references in a Mechanical Turk project by resaving resources (for Godot 4.4+)',
       inputSchema: {
         type: 'object',
         properties: {
-          projectPath: { type: 'string', description: 'Path to the Godot project directory' },
+          projectPath: { type: 'string', description: 'Path to the Mechanical Turk project directory' },
         },
         required: ['projectPath'],
       },
@@ -62,7 +62,7 @@ export function registerUidTools(ctx: ToolContext): ToolRegistration {
       try {
         const godotPath = await ctx.ensureGodotPath();
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`);
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`);
         }
         if (!existsSync(join(args.projectPath, args.filePath))) {
           return createErrorResponse(`File does not exist: ${args.filePath}`);
@@ -92,7 +92,7 @@ export function registerUidTools(ctx: ToolContext): ToolRegistration {
       try {
         const godotPath = await ctx.ensureGodotPath();
         if (!existsSync(join(args.projectPath, 'project.godot'))) {
-          return createErrorResponse(`Not a valid Godot project: ${args.projectPath}`);
+          return createErrorResponse(`Not a valid Mechanical Turk project: ${args.projectPath}`);
         }
         const { stdout: versionOutput } = await execFileAsync(godotPath, ['--version']);
         if (!isGodot44OrLater(versionOutput.trim())) {

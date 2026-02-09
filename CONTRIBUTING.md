@@ -1,6 +1,6 @@
-# Contributing to Godot MCP
+# Contributing to Mechanical Turk MCP
 
-Thank you for considering contributing to Godot MCP! This document outlines the process for contributing to the project.
+Thank you for considering contributing to Mechanical Turk MCP! This document outlines the process for contributing to the project.
 
 ## Code of Conduct
 
@@ -45,17 +45,21 @@ By participating in this project, you agree to maintain a respectful and inclusi
 ### Project Structure
 
 ```
-godot-mcp/
-├── src/             # Source code
-│   └── index.ts     # Main server implementation
-├── build/           # Compiled JavaScript (generated)
-├── tests/           # Test files (future)
-├── examples/        # Example Godot projects (future)
-├── LICENSE          # MIT License
-├── README.md        # Documentation
-├── CONTRIBUTING.md  # Contribution guidelines
-├── package.json     # Project configuration
-└── tsconfig.json    # TypeScript configuration
+mechanical-turk-mcp/
+├── src/
+│   ├── index.ts           # Entry point
+│   ├── server.ts          # MCP server lifecycle and tool registration
+│   ├── tools/             # Tool modules (one per feature area)
+│   ├── bridge/            # WebSocket bridge client and protocol
+│   └── utils/             # Shared utilities
+├── godot-plugin/          # Godot editor plugin for WebSocket bridge
+├── build/                 # Compiled JavaScript (generated)
+├── assets/                # Branding assets
+├── LICENSE                # MIT License
+├── README.md              # Documentation
+├── CONTRIBUTING.md        # Contribution guidelines
+├── package.json           # Project configuration
+└── tsconfig.json          # TypeScript configuration
 ```
 
 ### Code Style
@@ -80,10 +84,10 @@ For debugging the MCP server:
 
 ### Adding New Tools
 
-When adding new tools to the MCP server:
+When adding new tools to the Mechanical Turk MCP server:
 
-1. Define the tool in the `setupToolHandlers` method
-2. Create a handler method for the tool
+1. Create a new tool module in `src/tools/` (or add to an existing one)
+2. Register the tool in `src/server.ts`
 3. Add proper input validation and error handling
 4. Update the README.md with documentation for the new tool
 5. Update the Features section in the README.md
@@ -94,20 +98,20 @@ When adding new tools to the MCP server:
 
 The following tools have been recently added:
 
-- **get_project_info**: Retrieves metadata about a Godot project
+- **get_project_info**: Retrieves metadata about a Mechanical Turk project
   - Analyzes project structure
   - Returns information about scenes, scripts, and assets
-  - Helps LLMs understand the organization of Godot projects
-  
-- **capture_screenshot**: Takes a screenshot of a running Godot project
-  - Requires an active Godot process
-  - Saves the screenshot to the specified path
+  - Helps LLMs understand the organization of projects
+
+- **capture_screenshot**: Takes a screenshot of a running game or the editor viewport
+  - Requires the Mechanical Turk MCP Bridge plugin enabled in the editor
+  - Returns the screenshot inline or saves to a specified path
   - Useful for visual debugging and feedback
 
 Example:
 
 ```typescript
-// In setupToolHandlers
+// In your tool module
 {
   name: 'your_new_tool',
   description: 'Description of what your tool does',
@@ -123,11 +127,11 @@ Example:
   },
 }
 
-// Add handler method
-private async handleYourNewTool(args: any) {
-  // Validate input
+// Add handler
+your_new_tool: async (rawArgs: any) => {
+  const args = normalizeParameters(rawArgs || {});
   if (!args.param1) {
-    return this.createErrorResponse(
+    return createErrorResponse(
       'Parameter 1 is required',
       ['Provide a valid value for parameter 1']
     );
@@ -137,16 +141,9 @@ private async handleYourNewTool(args: any) {
     // Implement tool functionality
     // ...
 
-    return {
-      content: [
-        {
-          type: 'text',
-          text: 'Result of your tool',
-        },
-      ],
-    };
+    return createTextResponse('Result of your tool');
   } catch (error: any) {
-    return this.createErrorResponse(
+    return createErrorResponse(
       `Failed to execute tool: ${error?.message || 'Unknown error'}`,
       [
         'Possible solution 1',

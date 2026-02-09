@@ -1,74 +1,33 @@
 
-# Godot MCP
+# Mechanical Turk MCP
 
-[![Github-sponsors](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/Coding-Solo)
+![Mechanical Turk](assets/gold_mechanical_turk.png)
 
 [![](https://badge.mcpx.dev?type=server 'MCP Server')](https://modelcontextprotocol.io/introduction)
-[![Made with Godot](https://img.shields.io/badge/Made%20with-Godot-478CBF?style=flat&logo=godot%20engine&logoColor=white)](https://godotengine.org)
 [![](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white 'Node.js')](https://nodejs.org/en/download/)
 [![](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white 'TypeScript')](https://www.typescriptlang.org/)
 
-[![](https://img.shields.io/github/last-commit/Coding-Solo/godot-mcp 'Last Commit')](https://github.com/Coding-Solo/godot-mcp/commits/main)
-[![](https://img.shields.io/github/stars/Coding-Solo/godot-mcp 'Stars')](https://github.com/Coding-Solo/godot-mcp/stargazers)
-[![](https://img.shields.io/github/forks/Coding-Solo/godot-mcp 'Forks')](https://github.com/Coding-Solo/godot-mcp/network/members)
+[![](https://img.shields.io/github/last-commit/crankyMagician/mechanical-turk-mcp 'Last Commit')](https://github.com/crankyMagician/mechanical-turk-mcp/commits/main)
+[![](https://img.shields.io/github/stars/crankyMagician/mechanical-turk-mcp 'Stars')](https://github.com/crankyMagician/mechanical-turk-mcp/stargazers)
+[![](https://img.shields.io/github/forks/crankyMagician/mechanical-turk-mcp 'Forks')](https://github.com/crankyMagician/mechanical-turk-mcp/network/members)
 [![](https://img.shields.io/badge/License-MIT-red.svg 'MIT License')](https://opensource.org/licenses/MIT)
 
-```text
-                           (((((((             (((((((                          
-                        (((((((((((           (((((((((((                      
-                        (((((((((((((       (((((((((((((                       
-                        (((((((((((((((((((((((((((((((((                       
-                        (((((((((((((((((((((((((((((((((                       
-         (((((      (((((((((((((((((((((((((((((((((((((((((      (((((        
-       (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((      
-     ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((    
-    ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((    
-      (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((     
-        (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((       
-         (((((((((((@@@@@@@(((((((((((((((((((((((((((@@@@@@@(((((((((((        
-         (((((((((@@@@,,,,,@@@(((((((((((((((((((((@@@,,,,,@@@@(((((((((        
-         ((((((((@@@,,,,,,,,,@@(((((((@@@@@(((((((@@,,,,,,,,,@@@((((((((        
-         ((((((((@@@,,,,,,,,,@@(((((((@@@@@(((((((@@,,,,,,,,,@@@((((((((        
-         (((((((((@@@,,,,,,,@@((((((((@@@@@((((((((@@,,,,,,,@@@(((((((((        
-         ((((((((((((@@@@@@(((((((((((@@@@@(((((((((((@@@@@@((((((((((((        
-         (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((        
-         (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((        
-         @@@@@@@@@@@@@((((((((((((@@@@@@@@@@@@@((((((((((((@@@@@@@@@@@@@        
-         ((((((((( @@@(((((((((((@@(((((((((((@@(((((((((((@@@ (((((((((        
-         (((((((((( @@((((((((((@@@(((((((((((@@@((((((((((@@ ((((((((((        
-          (((((((((((@@@@@@@@@@@@@@(((((((((((@@@@@@@@@@@@@@(((((((((((         
-           (((((((((((((((((((((((((((((((((((((((((((((((((((((((((((          
-              (((((((((((((((((((((((((((((((((((((((((((((((((((((             
-                 (((((((((((((((((((((((((((((((((((((((((((((((                
-                        (((((((((((((((((((((((((((((((((                       
-                                                                                
-
-                          /$$      /$$  /$$$$$$  /$$$$$$$ 
-                         | $$$    /$$$ /$$__  $$| $$__  $$
-                         | $$$$  /$$$$| $$  \__/| $$  \ $$
-                         | $$ $$/$$ $$| $$      | $$$$$$$/
-                         | $$  $$$| $$| $$      | $$____/ 
-                         | $$\  $ | $$| $$    $$| $$      
-                         | $$ \/  | $$|  $$$$$$/| $$      
-                         |__/     |__/ \______/ |__/       
-```
-
-A Model Context Protocol (MCP) server for interacting with the Godot game engine.
+A Model Context Protocol (MCP) server for interacting with the Mechanical Turk engine.
 
 ## Introduction
 
-Godot MCP enables AI assistants to launch the Godot editor, run projects, capture debug output, and control project execution - all through a standardized interface.
+Mechanical Turk MCP enables AI assistants to launch the editor, run projects, capture debug output, and control project execution - all through a standardized interface.
 
-This direct feedback loop helps AI assistants like Claude understand what works and what doesn't in real Godot projects, leading to better code generation and debugging assistance.
+This direct feedback loop helps AI assistants like Claude understand what works and what doesn't in real projects, leading to better code generation and debugging assistance.
 
 ## Features
 
-- **Launch Godot Editor**: Open the Godot editor for a specific project
-- **Run Godot Projects**: Execute Godot projects in debug mode
+- **Launch Editor**: Open the Mechanical Turk editor for a specific project
+- **Run Projects**: Execute projects in debug mode
 - **Capture Debug Output**: Retrieve console output and error messages
-- **Control Execution**: Start and stop Godot projects programmatically
-- **Get Godot Version**: Retrieve the installed Godot version
-- **List Godot Projects**: Find Godot projects in a specified directory
+- **Control Execution**: Start and stop projects programmatically
+- **Get Engine Version**: Retrieve the installed engine version
+- **List Projects**: Find Mechanical Turk projects in a specified directory
 - **Project Analysis**: Get detailed information about project structure
 - **Scene Management**:
   - Create new scenes with specified root node types
@@ -79,6 +38,14 @@ This direct feedback loop helps AI assistants like Claude understand what works 
 - **UID Management** (for Godot 4.4+):
   - Get UID for specific files
   - Update UID references by resaving resources
+- **Live Editor Integration** (via WebSocket bridge plugin):
+  - Capture screenshots from the editor or running game
+  - Send keyboard and mouse input events
+  - Inspect the live scene tree hierarchy
+  - Get detailed node properties
+- **Testing**:
+  - List GUT test files in a project
+  - Run GUT tests headlessly
 
 ## Requirements
 
@@ -93,8 +60,8 @@ This direct feedback loop helps AI assistants like Claude understand what works 
 First, clone the repository and build the MCP server:
 
 ```bash
-git clone https://github.com/Coding-Solo/godot-mcp.git
-cd godot-mcp
+git clone https://github.com/crankyMagician/mechanical-turk-mcp.git
+cd mechanical-turk-mcp
 npm install
 npm run build
 ```
@@ -108,9 +75,9 @@ Add to your Cline MCP settings file (`~/Library/Application Support/Code/User/gl
 ```json
 {
   "mcpServers": {
-    "godot": {
+    "mechanical-turk": {
       "command": "node",
-      "args": ["/absolute/path/to/godot-mcp/build/index.js"],
+      "args": ["/absolute/path/to/mechanical-turk-mcp/build/index.js"],
       "env": {
         "DEBUG": "true"                  // Optional: Enable detailed logging
       },
@@ -129,7 +96,15 @@ Add to your Cline MCP settings file (`~/Library/Application Support/Code/User/gl
         "export_mesh_library",
         "save_scene",
         "get_uid",
-        "update_project_uids"
+        "update_project_uids",
+        "install_plugin",
+        "capture_screenshot",
+        "send_input_event",
+        "send_action",
+        "get_scene_tree",
+        "get_node_properties",
+        "list_tests",
+        "run_tests"
       ]
     }
   }
@@ -143,9 +118,9 @@ Add to your Cline MCP settings file (`~/Library/Application Support/Code/User/gl
 1. Go to **Cursor Settings** > **Features** > **MCP**
 2. Click on the **+ Add New MCP Server** button
 3. Fill out the form:
-   - Name: `godot` (or any name you prefer)
+   - Name: `mechanical-turk` (or any name you prefer)
    - Type: `command`
-   - Command: `node /absolute/path/to/godot-mcp/build/index.js`
+   - Command: `node /absolute/path/to/mechanical-turk-mcp/build/index.js`
 4. Click "Add"
 5. You may need to press the refresh button in the top right corner of the MCP server card to populate the tool list
 
@@ -156,11 +131,29 @@ Create a file at `.cursor/mcp.json` in your project directory with the following
 ```json
 {
   "mcpServers": {
-    "godot": {
+    "mechanical-turk": {
       "command": "node",
-      "args": ["/absolute/path/to/godot-mcp/build/index.js"],
+      "args": ["/absolute/path/to/mechanical-turk-mcp/build/index.js"],
       "env": {
         "DEBUG": "true"                  // Enable detailed logging
+      }
+    }
+  }
+}
+```
+
+#### Option C: Configure with Claude Code
+
+Add to your Claude Code MCP settings (`~/.claude/mcp.json`):
+
+```json
+{
+  "mcpServers": {
+    "mechanical-turk": {
+      "command": "node",
+      "args": ["/absolute/path/to/mechanical-turk-mcp/build/index.js"],
+      "env": {
+        "DEBUG": "true"
       }
     }
   }
@@ -174,24 +167,35 @@ You can customize the server behavior with these environment variables:
 - `GODOT_PATH`: Path to the Godot executable (overrides automatic detection)
 - `DEBUG`: Set to "true" to enable detailed server-side debug logging
 
+### Step 4: Install the Bridge Plugin (Optional)
+
+For live editor integration features (screenshots, input simulation, scene tree inspection), install the bridge plugin into your project:
+
+1. Use the `install_plugin` tool, or manually copy `godot-plugin/addons/mechanical_turk_mcp/` into your project's `addons/` directory
+2. Open the project in the editor
+3. Go to **Project > Project Settings > Plugins**
+4. Enable **Mechanical Turk MCP Bridge**
+
+The plugin starts a WebSocket server on port 9080 when enabled.
+
 ## Example Prompts
 
 Once configured, your AI assistant will automatically run the MCP server when needed. You can use prompts like:
 
 ```text
-"Launch the Godot editor for my project at /path/to/project"
+"Launch the editor for my project at /path/to/project"
 
-"Run my Godot project and show me any errors"
+"Run my project and show me any errors"
 
-"Get information about my Godot project structure"
+"Get information about my project structure"
 
-"Analyze my Godot project structure and suggest improvements"
+"Analyze my project structure and suggest improvements"
 
-"Help me debug this error in my Godot project: [paste error]"
+"Help me debug this error in my project: [paste error]"
 
 "Write a GDScript for a character controller with double jump and wall sliding"
 
-"Create a new scene with a Player node in my Godot project"
+"Create a new scene with a Player node in my project"
 
 "Add a Sprite2D node to my player scene and load the character texture"
 
@@ -199,29 +203,31 @@ Once configured, your AI assistant will automatically run the MCP server when ne
 
 "Create a UI scene with buttons and labels for my game's main menu"
 
-"Get the UID for a specific script file in my Godot 4.4 project"
+"Take a screenshot of my running game"
 
-"Update UID references in my Godot project after upgrading to 4.4"
+"Send a key press to test my player movement"
+
+"Inspect the scene tree of my running game"
+
+"Run the GUT tests in my project"
 ```
 
 ## Implementation Details
 
 ### Architecture
 
-The Godot MCP server uses a bundled GDScript approach for complex operations:
+The Mechanical Turk MCP server uses two modes of operation:
 
-1. **Direct Commands**: Simple operations like launching the editor or getting project info use Godot's built-in CLI commands directly.
-2. **Bundled Operations Script**: Complex operations like creating scenes or adding nodes use a single, comprehensive GDScript file (`godot_operations.gd`) that handles all operations.
+1. **CLI Mode**: Simple operations like launching the editor or getting project info use Godot's built-in CLI commands directly. Complex operations like creating scenes or adding nodes use a bundled GDScript file (`godot_operations.gd`) that handles all operations.
+2. **WebSocket Bridge Mode**: Live editor integration features (screenshots, input simulation, scene tree inspection) use a WebSocket bridge plugin that runs inside the Godot editor on port 9080.
 
 This architecture provides several benefits:
 
 - **No Temporary Files**: Eliminates the need for temporary script files, keeping your system clean
-- **Simplified Codebase**: Centralizes all Godot operations in one (somewhat) organized file
+- **Simplified Codebase**: Centralizes all operations in organized modules
 - **Better Maintainability**: Makes it easier to add new operations or modify existing ones
 - **Improved Error Handling**: Provides consistent error reporting across all operations
-- **Reduced Overhead**: Minimizes file I/O operations for better performance
-
-The bundled script accepts operation type and parameters as JSON, allowing for flexible and dynamic operation execution without generating temporary files for each operation.
+- **Live Integration**: Real-time communication with the running editor via WebSocket
 
 ## Troubleshooting
 
@@ -229,6 +235,7 @@ The bundled script accepts operation type and parameters as JSON, allowing for f
 - **Connection Issues**: Ensure the server is running and restart your AI assistant
 - **Invalid Project Path**: Ensure the path points to a directory containing a project.godot file
 - **Build Issues**: Make sure all dependencies are installed by running `npm install`
+- **Bridge Not Connecting**: Ensure the Mechanical Turk MCP Bridge plugin is installed and enabled in the editor
 - **For Cursor Specifically**:
 -   Ensure the MCP server shows up and is enabled in Cursor settings (Settings > MCP)
 -   MCP tools can only be run using the Agent chat profile (Cursor Pro or Business subscription)
@@ -237,5 +244,3 @@ The bundled script accepts operation type and parameters as JSON, allowing for f
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/coding-solo-godot-mcp-badge.png)](https://mseep.ai/app/coding-solo-godot-mcp)

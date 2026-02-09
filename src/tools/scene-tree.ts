@@ -11,7 +11,7 @@ export function registerSceneTreeTools(ctx: ToolContext): ToolRegistration {
   const tools = [
     {
       name: 'get_scene_tree',
-      description: 'Get the live scene tree hierarchy from the running Godot game. Requires the Godot editor with MCP plugin.',
+      description: 'Get the live scene tree hierarchy from the running Mechanical Turk game. Requires the Mechanical Turk editor with MCP plugin.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -33,7 +33,7 @@ export function registerSceneTreeTools(ctx: ToolContext): ToolRegistration {
     },
     {
       name: 'get_node_properties',
-      description: 'Get detailed properties of a specific node in the running scene tree. Requires the Godot editor with MCP plugin.',
+      description: 'Get detailed properties of a specific node in the running scene tree. Requires the Mechanical Turk editor with MCP plugin.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -64,7 +64,7 @@ export function registerSceneTreeTools(ctx: ToolContext): ToolRegistration {
         return createTextResponse(JSON.stringify(result, null, 2));
       } catch (error: any) {
         return createErrorResponse(`Failed to get scene tree: ${error?.message || 'Unknown error'}`, [
-          'Ensure the Godot editor is running with the MCP plugin enabled',
+          'Ensure the Mechanical Turk editor is running with the MCP plugin enabled',
           'Ensure a project is running in the editor',
         ]);
       }
@@ -83,7 +83,7 @@ export function registerSceneTreeTools(ctx: ToolContext): ToolRegistration {
         return createTextResponse(JSON.stringify(result, null, 2));
       } catch (error: any) {
         return createErrorResponse(`Failed to get node properties: ${error?.message || 'Unknown error'}`, [
-          'Ensure the Godot editor is running with the MCP plugin enabled',
+          'Ensure the Mechanical Turk editor is running with the MCP plugin enabled',
           `Verify the node path "${args.nodePath}" exists in the current scene`,
         ]);
       }
