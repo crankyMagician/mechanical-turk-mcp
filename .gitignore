@@ -1,8 +1,8 @@
 # Dependencies
 node_modules/
 
-# Build output
-build/
+# Build output — build/ is tracked so the engine submodule has index.js
+# immediately after clone (required by editor_node.cpp auto-launch).
 dist/
 
 # Logs

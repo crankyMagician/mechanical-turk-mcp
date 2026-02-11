@@ -32,6 +32,7 @@ import { registerInputTools } from './tools/input.js';
 import { registerSceneTreeTools } from './tools/scene-tree.js';
 import { registerTestingTools } from './tools/testing.js';
 import { registerPluginTools } from './tools/plugin.js';
+import { registerLevel2dTools } from './tools/level-2d.js';
 
 const execFileAsync = promisify(execFile);
 
@@ -108,6 +109,7 @@ export class GodotServer {
       registerInputTools(ctx),
       registerSceneTreeTools(ctx),
       registerTestingTools(ctx),
+      registerLevel2dTools(ctx),
     ];
 
     for (const reg of registrations) {

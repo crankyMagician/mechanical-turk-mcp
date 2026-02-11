@@ -13,15 +13,18 @@ var _handlers: Dictionary = {}
 var _screenshot_handler: Node = null
 var _input_handler: Node = null
 var _scene_tree_handler: Node = null
+var _level_handler: Node = null
 
 
 func _ready() -> void:
 	_screenshot_handler = preload("res://addons/mechanical_turk_mcp/handlers/screenshot_handler.gd").new()
 	_input_handler = preload("res://addons/mechanical_turk_mcp/handlers/input_handler.gd").new()
 	_scene_tree_handler = preload("res://addons/mechanical_turk_mcp/handlers/scene_tree_handler.gd").new()
+	_level_handler = preload("res://addons/mechanical_turk_mcp/handlers/level_handler.gd").new()
 	add_child(_screenshot_handler)
 	add_child(_input_handler)
 	add_child(_scene_tree_handler)
+	add_child(_level_handler)
 
 	# Register method handlers
 	_handlers["ping"] = _handle_ping
@@ -30,6 +33,10 @@ func _ready() -> void:
 	_handlers["send_action"] = _input_handler.handle_action
 	_handlers["get_scene_tree"] = _scene_tree_handler.handle_get_tree
 	_handlers["get_node_properties"] = _scene_tree_handler.handle_get_properties
+	_handlers["set_node_property"] = _level_handler.handle_set_property
+	_handlers["delete_node"] = _level_handler.handle_delete_node
+	_handlers["set_tiles"] = _level_handler.handle_set_tiles
+	_handlers["reparent_node"] = _level_handler.handle_reparent_node
 
 	_start_server()
 
